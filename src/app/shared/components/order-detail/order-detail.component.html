@@ -1,0 +1,38 @@
+<div class="row col-lg-10 offset-lg-1" *ngIf="order$ | async as order">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Shipping Detail</h2>
+          <ul class="list-group list-group-flush" >
+            <li class="list-group-item">
+              <b>Name:</b> {{ order.shipping.name }}
+            </li>
+            <li class="list-group-item">
+              <b>Address:</b> {{ order.shipping.addressLine1 }}<span *ngIf="order.shipping.addressLine2">, {{ order.shipping.addressLine2 }}</span>
+            </li>
+            <li class="list-group-item">
+            <b>City:</b> {{ order.shipping.city }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+      (click)="navigateBack()"
+      type="button"
+      class="btn btn-primary btn-block my-3"><i class="bi bi-arrow-left"></i> Back to Orders</button>
+    </div>
+      
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Order Summary</h2>
+          <ul class="list-group list-group-flush" >
+            <li class="list-group-item"  *ngFor="let item of order.items">
+              {{ item.quantity }} x {{ item.product.title }} ({{ item.product.price | currency: 'INR'}})
+              <div class="float-end">{{ (item.product.price * item.quantity) | currency:'INR' }}</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

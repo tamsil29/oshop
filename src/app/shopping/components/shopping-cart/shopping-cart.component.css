@@ -1,0 +1,14 @@
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-size: cover;
+}
+.btn-primary {
+  margin-bottom: 40px;
+  width: auto;
+  margin-right: 8px;
+}
+.btn-outline-warning {
+  margin-left: 60%;
+}
