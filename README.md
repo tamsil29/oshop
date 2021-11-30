@@ -1,6 +1,7 @@
 # Oshop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
+the webapp is live at https://oshop-3ff64.web.app/
 
 ## Development server
 
